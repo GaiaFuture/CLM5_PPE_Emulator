@@ -1,11 +1,11 @@
 replicaCount: 1
 
 webapp:
-  name: gaiafuture
-  group: gaiafuture
+  name: CLM-PPE
+  group: CLM-PPE
   path: /
   tls:
-    fqdn: gaiafuture.k8s.ucar.edu
+    fqdn: CLM-PPE.k8s.ucar.edu
     secretName: incommon-cert-gaiafuture
   container: 
     image: hmchilders/paneltestbed1:latest
