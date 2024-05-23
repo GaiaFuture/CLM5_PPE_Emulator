@@ -65,6 +65,7 @@ File naming convention: f'emulator_plot_{var_name}_{param_name_upper}_{time_sele
 4. Are there multiple versions of the dataset? N/A
 METHODOLOGICAL INFORMATION
 1. Description of methods used for collection/generation of data: <Include links or references to publications or other documentation containing experimental design or protocols used in data collection>
+`Preprocessed Data`
 ```{python}
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---- 	cluster reading function   	----
@@ -295,6 +296,102 @@ def read_all_simulations(var, time_selection):
 	# makes sense to keep if else pulling statement at the top of read_n_wrangle
 	return ds
 ```
+
+`Emulator Data`
+```{python}
+
+
+def train_emulator2(param, var, var_name, time_selection):
+     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     # ----         Split Data           ----
+     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    X_train, X_test, y_train, y_test = train_test_split(param,
+                                                        var, 
+                                                        test_size=0.2,
+                                                        random_state=0)
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # ----    Kernel Specs No Tuning    ----
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Kernel Specs No Tuning
+    kernel = ConstantKernel(constant_value=3, constant_value_bounds=(1e-2, 1e4))  \
+            * RBF(length_scale=1, length_scale_bounds=(1e-4, 1e8))
+
+    # Using an out-of-the-box kernel for now
+    gpr_model = GaussianProcessRegressor(kernel=kernel,
+                                         n_restarts_optimizer=20, 
+                                         random_state=99, 
+                                         normalize_y=True)
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # ----         Fit the Model        ----
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Fit the model to the training data
+    gpr_model.fit(X_train, y_train)
+
+    # Prepare to store results
+    results_dict = {
+        'X_values': {},
+        'y_pred': {},
+        'y_std': {},
+        'r2': {},
+         # save the trained GPR model
+        'gpr_model': gpr_model, 
+         # save y_test for R^2 later
+        'y_test': y_test, 
+        'X_test': X_test
+       
+    }
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # ----      Iterate thru Params     ----
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    for param_name, param_index in param_names_dict.items():
+        # Create X_values for prediction linspace
+        X_values = np.full((100, len(param_names_dict)), 0.5)           # r2 drops to 0.004 when removing this, but we're only using the R^2 used in fast plot
+       # X_values = np.tile(X_test, 1)
+        X_values[:, param_index] = np.linspace(0, 1, 100)
+        # Vary only the current parameter over a linspace
+        #X_values[:, param_index] = np.linspace(np.min(X_test[:, param_index]), np.max(X_test[:, param_index]))
+
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # ----         Get Predictions      ----
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # Make predictions for the current parameter
+        y_pred, y_std = gpr_model.predict(X_values, return_std=True)
+
+        
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # ----         Collect Metrics      ----
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        mae = mean_absolute_error(y_test, y_pred)
+        rmse_emulator = np.sqrt(mean_squared_error(y_test, y_pred))
+        r2_emulator = np.corrcoef(y_test, y_pred)[0, 1]**2
+
+        # Store results in dictionaries
+        results_dict['X_values'][param_name] = X_values
+        results_dict['y_pred'][param_name] = y_pred
+        results_dict['y_std'][param_name] = y_std
+        results_dict['r2'][param_name] = r2_emulator
+        
+   
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # ----      Pickle Emulation     ----
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # Save the predictions and overall R^2 to a file
+        filename = os.path.join("emulation_results", f"{var_name}_{param_name}_{time_selection}_gpr_model.sav")
+
+        if os.path.exists(filename):
+            # Load the model from disk
+            loaded_model = pickle.load(open(filename, 'rb'))
+        else:
+            print(f"Emulator is running for {param_name}, this may take a few moments")
+            with open(filename, 'wb') as file:
+                pickle.dump((X_values, y_pred, y_std, r2_emulator, param_name, var_name), file)
+
+    return results_dict
+```
+
 3. Instrument- or software-specific information needed to interpret the data: <include full name and version of software, and any necessary packages or libraries needed to run scripts>
  - cartopy=0.22.0
   - dask=2024.1.0
@@ -320,12 +417,21 @@ def read_all_simulations(var, time_selection):
   - statsmodels=0.14.1
   - xarray=2024.2.0
   - xesmf=0.8.4
-4. Standards and calibration information, if appropriate: 
-
+4. Standards and calibration information, if appropriate:
+The standard of the R^2 value provided by the emulator when assessing the total LHC parameter space was above 0.65. The kernel specification below enable the GPR ML emulator to assess the covariance of the 32 parameters simulatenously to produce predictions for a given climate variable.
 5. Environmental/experimental conditions: 
-Kernel specification for GPR: 
+Kernel specification for GPR:
+```{python}
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # ----    Kernel Specs No Tuning    ----
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Kernel Specs No Tuning
+    kernel = ConstantKernel(constant_value=3, constant_value_bounds=(1e-2, 1e4))  \
+            * RBF(length_scale=1, length_scale_bounds=(1e-4, 1e8))
+```
 6. Describe any quality-assurance procedures performed on the data:
-7. People involved with sample collection, processing, analysis and/or submission:
+The creation of the png files was a measure to assure the GPR ML emulator predictions are performing as expected. 
+9. People involved with sample collection, processing, analysis and/or submission:
 DATA-SPECIFIC INFORMATION FOR:
 [FILENAME] <repeat this section for each dataset, folder or file, as appropriate>
 1. Number of variables:
