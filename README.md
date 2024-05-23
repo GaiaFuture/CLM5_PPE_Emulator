@@ -65,6 +65,7 @@ File naming convention: f'emulator_plot_{var_name}_{param_name_upper}_{time_sele
 4. Are there multiple versions of the dataset? N/A
 METHODOLOGICAL INFORMATION
 1. Description of methods used for collection/generation of data: <Include links or references to publications or other documentation containing experimental design or protocols used in data collection>
+```{python}
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---- 	cluster reading function   	----
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -210,8 +211,6 @@ def wrangle_var_cluster(da):
 	var = da_global_ann.mean(dim='year')
     
 	return var
-```
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ---- 	cluster reading function   	----
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,12 +294,36 @@ def read_all_simulations(var, time_selection):
 	# better to keep these things broken up / shorter for future works updates
 	# makes sense to keep if else pulling statement at the top of read_n_wrangle
 	return ds
+```
 3. Instrument- or software-specific information needed to interpret the data: <include full name and version of software, and any necessary packages or libraries needed to run scripts>
-[Heather to provide completed environment.yml with versions]
+ - cartopy=0.22.0
+  - dask=2024.1.0
+  - dask-jobqueue=0.8.5
+  - gpflow=2.5.2
+  - hvplot=0.9.2
+  - ipython=8.22.2
+  - jupyter=1.0.0
+  - jupyterlab=4.1.5
+  - netcdf4=1.6.5
+  - notebook=7.1.2
+  - numpy=1.26.4
+  - pandas=2.2.1
+  - panel=1.3.8
+  - plotly=5.19.0
+  - python=3.11.7
+  - regionmask=0.12.1
+  - scikit-learn=1.4.1
+  - scipy=1.12.0
+  - seaborn=0.13.1
+  - shapely=2.0.3
+  - sparse=0.15.1
+  - statsmodels=0.14.1
+  - xarray=2024.2.0
+  - xesmf=0.8.4
 4. Standards and calibration information, if appropriate: 
 
 5. Environmental/experimental conditions: 
-
+Kernel specification for GPR: 
 6. Describe any quality-assurance procedures performed on the data:
 7. People involved with sample collection, processing, analysis and/or submission:
 DATA-SPECIFIC INFORMATION FOR:
@@ -313,3 +336,4 @@ Dashboard allows access to over 500+ climate variables.
 3. Variable List: <list variable name(s), description(s), unit(s)and value labels as appropriate for each>
 4. Missing data codes: <list code/symbol and definition>
 5. Specialized formats or other abbreviations used:
+
