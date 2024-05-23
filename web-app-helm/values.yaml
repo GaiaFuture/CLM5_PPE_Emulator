@@ -6,7 +6,7 @@ webapp:
   path: /
   tls:
     fqdn: CLM-PPE.k8s.ucar.edu
-    secretName: incommon-cert-gaiafuture
+    secretName: incommon-cert-clmppe
   container: 
     image: hmchilders/paneltestbed1:latest
     port: 5003
