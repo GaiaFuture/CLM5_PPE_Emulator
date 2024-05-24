@@ -86,7 +86,7 @@ results_dict = {
 ### Ylims Dictionary
 Content: ylim boundaries of variable predictions to use for plotting
 File naming convention: ylim_dict.pkl
-Attributes: Attributes and structures defined in this (notebook)[https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb].
+Attributes: Attributes and structures defined in this [notebook(https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb).
 
 
 #### Plots
