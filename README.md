@@ -53,7 +53,7 @@ Ingersoll Sofia, Childers Heather, Bhattarai Sujan. “Understanding the Influen
 Content: The txt file contains 500 accepted values for the 32 parameter features provided by the CGD – NCAR. These values were used to train the emulator for predicting parameter sensitivity and uncertainty.
 
 #### Preprocessed Data Folder
-Content: Cleaned subsets of 500 simulations from the PPE Latin Hypercube (LHC) data sets that are suitable for usage in a Gaussian Process Regression Machine Learning (GPR ML) Emulator. The subsets differ by user selected time range and climate variable of interest. The time ranges include: 1995-2015, 2000-2015, 2005-2015, 2010-2015. There are 11 climate variables in this folder, each containing a full set of time range subsets. The list includes:
+Content: Cleaned subsets of 500 simulations from the PPE Latin Hypercube (LHC) data sets that are suitable for usage in a Gaussian Process Regression Machine Learning (GPR ML) Emulator. The subsets differ by user selected time range and climate variable of interest. The time ranges include: 1995-2015, 2000-2015, 2005-2015, 2010-2015. There are 11 climate variables in this folder, each containing a full set of time range subsets. The list includes: GPP, NBP, TOTVEGC, TLAI, EFLX_LH_TOT, SOILWATER_10CM, QRUNOFF, FSR, FAREA_BURNED, SNOWDP, LNC.
 
 These were selected due to popularity and ‘LNC’ was selected to assist with quality assurance measures that will be covered in detail further below.
 File naming convention: f"{var}_{time_selection}.nc"
