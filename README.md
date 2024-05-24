@@ -1,5 +1,6 @@
 # Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard
 This README.txt file was generated on 2024-05-22 by SOFIA INGERSOLL
+https://doi.org/10.5061/dryad.vq83bk422
 
 ### GENERAL INFORMATION
 1. Title of the Project: Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard
@@ -108,9 +109,8 @@ The `preprocessed_data` files are the inputs utilized to generate the `emulated_
 16. Are there multiple versions of the dataset? N/A
  
 ### METHODOLOGICAL INFORMATION
-17. Description of methods used for collection/generation of data: 
-This Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) outlines the workflow utilized to generate the data in this repo. It pulls functions from this [utils.py](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) to execute the desired commands. Below we will look at the [utils](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) functions that are not explicitly defined in the notebook. – General side note: if you decide to explore that Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) explaining how the data was made, you’ll notice you’ll be transported to another repo in this Organization:GaiaFuture. That’s our prototype playground! It’s a little messy because that’s where we spent the second half of this project tinkering.
-
+17. Description of methods used for collection/generation of data:
+Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) outlines the workflow utilized to generate the data in this repo. It pulls functions from this [utils.py](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) to execute the desired commands. Below we will look at the [utils](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) functions that are not explicitly defined in the notebook. – General side note: if you decide to explore that Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) explaining how the data was made, you’ll notice you’ll be transported to another repo in this Organization:GaiaFuture. That’s our prototype playground! It’s a little messy because that’s where we spent the second half of this project tinkering. The official repository is https://github.com/GaiaFuture/CLM5_PPE_Emulator.
 
 
 2. Methods for processing the data: 
@@ -603,7 +603,13 @@ Kernel specification for GPR:
 The creation of the png files was a measure to assure the GPR ML emulator predictions are performing as expected. Our team used the relationship of LNC and leafcn to assess the performance of our emulator because of the highly linear relationship. It was easiest to identify this correlation and affirm our model was working as expected.
 
 22. People involved with sample collection, processing, analysis and/or submission:
-DATA-SPECIFIC INFORMATION FOR:
+Principal Investigator 
+Name: Sofia Ingersoll
+Co-Investigators
+Name: Sujan Bhattarai
+Name: Heather Childers
+
+24. DATA-SPECIFIC INFORMATION FOR:
 `Accepted Parameter Values`
 (500,32) accepted parameter values. 1 file
 `Preprocessed_data`
@@ -620,13 +626,15 @@ Pickled dictionary of ylim boundaries for the 11 climate variables of interest. 
 	`FAST accuracy plot`
 	PNG object
 
-23. Variable List: 
+25. Variable List: 
 See the file `units_dict` for a list of variables and their respective units. The parameters are normalized between 0 and 1, so units are not applicable in this instance. A description of the variables may be accessed using this link:
 Table of specifications for the Community Land Model v5 (CLM5) https://www.cesm.ucar.edu/models/clm/data
-24. Missing data codes: 
+
+26. Missing data codes: 
 There isn’t any present in this data, however there is opportunity for this in one section of the workflow outlined in the [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) for `units_dict`. The output would look something like this:
 `units_dict`:[ var_name: units: ’Unknown’ ]
 If no units are present in the ds you’re reading from.
-25. Specialized formats or other abbreviations used:
+
+27. Specialized formats or other abbreviations used:
 This table is a life line when deciphering the CESM data abbreviations. It is important to note that the dashboard will include a table of the 32 parameters and top 10 most common climate variables with a brief description of each, their Earth systems category, and 
 Table of specifications for the Community Land Model v5 (CLM5) https://www.cesm.ucar.edu/models/clm/data
