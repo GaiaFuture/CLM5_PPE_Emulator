@@ -1,4 +1,5 @@
 import xarray as xr
+import sys
 from utils import * 
 
 # Request an additional 10 cores of power for processing from the server
