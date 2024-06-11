@@ -6,16 +6,10 @@
 This is a capstone project for the [Master of Environmental Data Science](https://bren.ucsb.edu/masters-programs/master-environmental-data-science) at [Bren School of Environmental Science and Management, University of California, Santa Barbara](https://bren.ucsb.edu)
 
 #### Contributor Information:
-Name: [Sofia Ingersoll](https://github.com/saingersoll)
-Institution: Bren School of Environmental Science & Management -- UCSB
-
-Name: [Heather Childers](https://github.com/hmchilders) 
-Institution: Bren School of Environmental Science & Management -- UCSB
-
-Name: [Sujan Bhattarai](https://github.com/Sujan-Bhattarai12)
-Institution: Bren School of Environmental Science & Management -- UCSB
+[Sofia Ingersoll](https://github.com/saingersoll),[Heather Childers](https://github.com/hmchilders), [Sujan Bhattarai](https://github.com/Sujan-Bhattarai12),
 
 Faculty Advisor/Client: Dr. Daniel Kennedy 
+
 Institution: NCAR Climate and Global Dynamics Lab -- UCSB
 
 #### Principal Investigator Contact Information 
