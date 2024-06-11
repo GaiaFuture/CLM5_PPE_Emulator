@@ -182,11 +182,11 @@ This data is open source and available for climate scientists to leverage for cl
 #### Recommended citation for the project:
 Ingersoll Sofia, Childers Heather, Bhattarai Sujan. “Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard”. (2024). University of California, Santa Barbara – Bren School of Environmental Science & Management. https://github.com/GaiaFuture/CLM5_PPE_Emulator.
 
-![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/4b458415-219a-4261-8384-a186ca9fa146)
-
-![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/f405f2f3-755f-4ffb-976b-2555f9bee29b)
-
 #### Acknowledgements
 Our team would like to say a special thank you to Dr. Linnia Hawkins and Nick Cote at NCAR for their collaboration throughout this project. Additionally, we would like to thank our Client and Faculty Advisor Dr. Daniel Kennedy and our Capstone Course Director Dr. Carmen Galaz-Garcia for their dedication to our team for the total duration of this project. We could not have achieved this without your collective guidance. Thank you!
 
+
+![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/4b458415-219a-4261-8384-a186ca9fa146)
+
+![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/f405f2f3-755f-4ffb-976b-2555f9bee29b)
 This README.md file was generated on 2024-05-22 by SOFIA INGERSOLL
