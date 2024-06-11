@@ -125,10 +125,12 @@ File naming convention:f'fast_acc_plot_{var_name}_{param_name}_{time_selection}.
 File naming convention: f'emulator_plot_{var_name}_{param_name_upper}_{time_selection}_gpr_model.png
 
 `src Folder`
+
 Content:
 The .py are the script used to build the interative dashboard
 
 `web-app-helm Folder` + `Dockerfile`
+
 Content:
 These files allow the dashboard to be continuously integrated into the NCAR server. So as updates are made in the repo, they will be automatically reflected on the public facing website.
 
