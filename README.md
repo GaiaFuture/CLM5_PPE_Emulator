@@ -124,6 +124,15 @@ File naming convention:f'fast_acc_plot_{var_name}_{param_name}_{time_selection}.
 
 File naming convention: f'emulator_plot_{var_name}_{param_name_upper}_{time_selection}_gpr_model.png
 
+`src Folder`
+Content:
+The .py are the script used to build the interative dashboard
+
+`web-app-helm Folder` + `Dockerfile`
+Content:
+These files allow the dashboard to be continuously integrated into the NCAR server. So as updates are made in the repo, they will be automatically reflected on the public facing website.
+
+
 ### Brief Description of Methods
 Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) outlines the workflow utilized to generate the data in this repo. It pulls functions from this [utils.py](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) to execute the desired commands. General side note: if you decide to explore that Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) explaining how the data was made, you’ll notice you’ll be transported to another repo in this Organization:GaiaFuture. That’s our prototype workspace! It’s a little messy because that’s where we spent the second half of this project tinkering. The official repository is https://github.com/GaiaFuture/CLM5_PPE_Emulator.
 
