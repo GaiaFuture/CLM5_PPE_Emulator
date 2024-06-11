@@ -130,7 +130,7 @@ Attributes and structures defined in this [notebook](https://github.com/GaiaFutu
 To access the data generated for our Docker containerized interactive panel dashboard, visit [our Dryad data repo](https://datadryad.org/stash/dataset/doi:10.5061/dryad.vq83bk422). Full details on how the data was generated, alongside the relationships between the data are outlined here.
 
 ### Package Info
-
+```
  - cartopy=0.22.0
   - dask=2024.1.0
   - dask-jobqueue=0.8.5
@@ -155,7 +155,7 @@ To access the data generated for our Docker containerized interactive panel dash
   - statsmodels=0.14.1
   - xarray=2024.2.0
   - xesmf=0.8.4
-
+```
 ### Experimental Conditions
 Once the Technical Documentation for this project is available, there is a significant section in the Solution Design dedicated to different kernel components that may be combined to better optimize the emulator.
 Current kernel specification for Dashboard GPR Emulator:
