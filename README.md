@@ -12,13 +12,10 @@ Faculty Advisor/Client: Dr. Daniel Kennedy
 
 Institution: NCAR Climate and Global Dynamics Lab -- UCSB
 
-#### Principal Investigator Contact Information 
-Name: Sofia Ingersoll
-
-Email: singersoll@bren.edu
-
 ### Metadata
 https://doi.org/10.5061/dryad.vq83bk422
+
+For questions or comments about this repository, please open a GitHub issue
    
 ### Project Summary
 The data utilized in this repository was data derived from another source, University of California, Santa Barbara – Climate and Global Dynamics Lab, National Center for Atmospheric Research: Parameter Perturbation Experiment (CGD NCAR PPE-5).
