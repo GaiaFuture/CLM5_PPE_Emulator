@@ -185,3 +185,23 @@ Our team would like to say a special thank you to Dr. Linnia Hawkins and Nick Co
 
 ![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/f405f2f3-755f-4ffb-976b-2555f9bee29b)
 This README.md file was generated on 2024-05-22 by SOFIA INGERSOLL
+
+References
+
+1.7. Gaussian Processes. (n.d.). Scikit-Learn. Retrieved March 15, 2024, from https://scikit-learn/stable/modules/gaussian_process.html
+
+A Visual Exploration of Gaussian Processes, Görtler, et al., Distill, 2019. https://distill.pub/2019/visual-exploration-gaussian-processes/
+
+Good enough practices to manage your project data—Managing your data. (n.d.). Retrieved March 15, 2024, from https://ucsb-library-research-data-services.github.io/project-data-management/manage.html
+
+Gaussian Processes for Machine Learning. Rasmussen, C. E., & Williams, C. K. I. (2006). MIT Press. Accessed 3 March 2024.
+
+Gaussian Processes in Machine Learning. In: Bousquet, O., von Luxburg, U., Rätsch, G. (eds) Advanced Lectures on Machine Learning. Rasmussen, C.E. (2004). ML 2003. Lecture Notes in Computer Science(), vol 3176. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-540-28650-9_4
+
+Improved generalized Fourier amplitude sensitivity test (FAST) for model assessment. Fang, S., Gertner, G.Z., Shinkareva, S. et al. | Statistics and Computing 13, 221–226 (2003). https://doi.org/10.1023/A:1024266632666
+
+Pickle - Python Object Serialization. Python Documentation, docs.python.org/3/library/pickle.html. Accessed 13 May 2024.
+
+Sklearn.Gaussian_process.Kernels.DotProduct. Scikit, scikit-learn.org/stable/modules/generated/sklearn.gaussian_process.kernels.DotProduct.html. Accessed 13 May 2024.
+
+Sklearn.Metrics.Pairwise.Polynomial_kernel. Scikit, scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.polynomial_kernel.html. Accessed 13 May 2024.
