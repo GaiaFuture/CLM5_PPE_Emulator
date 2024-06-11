@@ -1,7 +1,7 @@
 # The CLM5 Parameter Perturbation Experiment Emulator
 ## Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard
 
-![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/7a0692a2-da59-4e77-82ff-9bcede4c718b)
+![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/bca7cef5-9b6d-40a9-95a5-f2f2b8c0adc2)
 
 This is a capstone project for the [Master of Environmental Data Science](https://bren.ucsb.edu/masters-programs/master-environmental-data-science) at [Bren School of Environmental Science and Management, University of California, Santa Barbara](https://bren.ucsb.edu)
 
