@@ -40,7 +40,7 @@ The Parameter Perturbation Experiment data leveraged by our project was generate
 - [Table of output variables for the Community Earth Systems Model v2 (CESM2) Large Ensemble Community Project](https://www.cesm.ucar.edu/community-projects/lens2/output-variables). CESM2 is the climate model that supersedes the CLM5. The predictions provided for the CESM2 output variables were leveraged by the CLM5 to produce its predictions. The variables available in CESM2 are accessible using our dashboard linked above. 
 - [Table of specifications for the Community Land Model v5 (CLM5)](https://www.cesm.ucar.edu/models/clm/data)
 
-### DATA & FILE OVERVIEW
+### Data & File Overview
 ```
 ├── emulation results/
 │   └── f"{var_name}_{param_name}_{time_selection}_gpr_model.sav”
@@ -123,10 +123,8 @@ File naming convention:f'fast_acc_plot_{var_name}_{param_name}_{time_selection}.
 ##### emulator/
 Content:
 File naming convention: f'emulator_plot_{var_name}_{param_name_upper}_{time_selection}_gpr_model.png
- 
-### METHODOLOGICAL INFORMATION
-#### Description of methods used for collection/generation of data:
 
+### Brief Description of Methods:
 Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) outlines the workflow utilized to generate the data in this repo. It pulls functions from this [utils.py](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) to execute the desired commands. Below we will look at the [utils](https://github.com/GaiaFuture/Prototype/blob/main/utils.py) functions that are not explicitly defined in the notebook. – General side note: if you decide to explore that Attributes and structures defined in this [notebook](https://github.com/GaiaFuture/Prototype/blob/main/Data_Generation_Data_Repo.ipynb) explaining how the data was made, you’ll notice you’ll be transported to another repo in this Organization:GaiaFuture. That’s our prototype playground! It’s a little messy because that’s where we spent the second half of this project tinkering. The official repository is https://github.com/GaiaFuture/CLM5_PPE_Emulator.
 
 To access the data generated for our Docker containerized interactive panel dashboard, visit [our Dryad data repo](https://datadryad.org/stash/dataset/doi:10.5061/dryad.vq83bk422). Full details on how the data was generated, alongside the relationships between the data are outlined here.
