@@ -1,6 +1,5 @@
 # The CLM5 Parameter Perturbation Experiment Emulator (CLM5 PPE Emulator)
-## Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: 
-## Developing an Interactive Dashboard
+## Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard
 
 ![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/7a0692a2-da59-4e77-82ff-9bcede4c718b)
 
