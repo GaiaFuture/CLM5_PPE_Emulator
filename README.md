@@ -8,7 +8,7 @@ This is a capstone project for the [Master of Environmental Data Science](https:
 #### Contributor Information:
 [Sofia Ingersoll](https://github.com/saingersoll), [Heather Childers](https://github.com/hmchilders), [Sujan Bhattarai](https://github.com/Sujan-Bhattarai12)
 
-Faculty Advisor/Client: Dr. Daniel Kennedy 
+Faculty Advisor & Client: Dr. Daniel Kennedy 
 
 Institution: NCAR Climate and Global Dynamics Lab -- UCSB
 
