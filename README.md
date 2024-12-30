@@ -6,7 +6,9 @@
 This is a capstone project for the [Master of Environmental Data Science](https://bren.ucsb.edu/masters-programs/master-environmental-data-science) at [Bren School of Environmental Science and Management, University of California, Santa Barbara](https://bren.ucsb.edu)
 
 #### Contributor Information:
-[Sofia Ingersoll](https://github.com/saingersoll), [Heather Childers](https://github.com/hmchilders), [Sujan Bhattarai](https://github.com/Sujan-Bhattarai12)
+Project Manager: [Heather Childers](https://github.com/hmchilders) <br/>
+Communications Manager: [Sofia Ingersoll](https://github.com/saingersoll) <br/> 
+Data Manager: [Sujan Bhattarai](https://github.com/Sujan-Bhattarai12) <br/>
 
 Faculty Advisor & Client: Dr. Daniel Kennedy 
 
@@ -16,8 +18,23 @@ Institution: NCAR Climate and Global Dynamics Lab -- UCSB
 https://doi.org/10.5061/dryad.vq83bk422
 
 For questions or comments about this repository, please open a GitHub issue
-   
+
 ### Project Summary
+Climate change is a real and threatening problem facing today’s society. Advancements in climate modeling have  become one of our best tools to support research, policy, and mitigation strategies to address climate change. The National Center for Atmospheric Research (NCAR) has allocated substantial resources into developing a large-scale climate model, the Community Earth Systems Model (CESM), which consists of land, oceanic, and atmospheric climate sub-models created by various labs at NCAR. This project has worked primarily with the Climate and Global Dynamics Lab (CGDL) at NCAR, and the data they have generated as part of the Community Land Model Parameter Perturbation Experiment, which focuses primarily on terrestrial climate change predictors. The PPE involved varying over 200 land-parameters one at a time across 2500 simulations, and varying 32 land-parameters via advanced sampling techniques across 500 simulations to test for parameter interactions. 
+
+While all the necessary data for the PPE has been collected, the data is being stored in a collection of files that are difficult to interpret in their current form. There is an existing website that has pre-processed data visualizations for the one at a time data, but there are no visualizations for the data that factors in parameter interactions. There is also minimal documentation for the parameter/variable metadata, which makes interpreting the current visualizations nearly impossible for scientists outside of the Climate and Global Dynamics Lab. Furthermore, scientists utilizing this data are limited to the 500 parameter sets because running the simulations for new parameter values is time consuming and computationally inefficient.  To address these issues, the project deliverables include: <br/>
+* Developing an emulator, using machine learning techniques, that has the internal complexity to parse out a one-to-one relationship between a parameter and climate variable output 
+* Creating an interactive dashboard that allows users to select a parameter and variable of interest and displays visualizations for the predicted values and relative parameter importance
+* Improving the metadata documentation by constructing a splash page that includes experimental setup, full names of variables/parameters and the associated units.
+
+The initial phase of creating the interactive emulator is to create a standardized workflow of functions to output a formatted dataset. This dataset was used as the input data for the machine learning model that will become our emulator. The machine learning model implemented a form of regression that can identify the individual relationship between a variable and parameter of interest and quantify the uncertainty around the predicted relationship. After developing the key functionalities of the emulator, the results were then converted into figures that display the predicted relationship between a user-selected parameter and variable, a cross-validation plot showing the accuracy of the emulators predictions compared to the actual climate variable outputs, and a parameter influence plot to show the parameters with the highest influence on the selected climate variable. 
+
+These figures were then embedded into an interactive python dashboard using the Panel package. The structure of the dashboard will allow users to select a parameter and variable of interest, then display the visualizations with an accessible link to an HTML page that will include the metadata documentation.The dashboard will also be equipped with continuous integration, so that NCAR staff can build upon this emulator to add in extended functionality. The associated GitHub repository for this project will also act as a template for other departments at NCAR to develop similar tools for visualizing parameter sensitivity experiments.
+
+By providing a publicly accessible emulator equipped with these capabilities, scientists gain effortless access to interpreting intricate climate model outputs. This, in turn, fosters an environment where subject matter experts can contribute insights into parameter-variable relationships currently overlooked by the model, thereby enhancing the accuracy and precision of climate forecasts.
+
+
+### About the Data & Dashboard 
 The data utilized in this repository was data derived from another source, University of California, Santa Barbara – Climate and Global Dynamics Lab, National Center for Atmospheric Research: Parameter Perturbation Experiment (CGD NCAR PPE-5).
 
 To access the data generated for our Docker containerized interactive panel dashboard, visit [our Dryad data repo](https://datadryad.org/stash/dataset/doi:10.5061/dryad.vq83bk422). Full details on how the data was generated, alongside the relationships between the data are clearly outlined. By exploring the code in this repo, you'll see that the raw data from CGD NCAR PPE-5 is read in, wrangled to reduce the dimensions and properly weigh the time and grid cell dimensions. This data is stored under the `preprocessed_data` folder. This preprocessed data is then utilized to train our Gaussian Process Regression (GPR) emulator. The trained GPR Emulator is saved and stored for later use, alongside all of it's predictions, and necessary testing values for visualizing later in the `emulation_results` folder. Two visualizations are generated using the GPR data, a plot to show 1 input parameter vs 1 climate variable interaction predictions with 3 stdev of uncertainty. This plot serves as an interest meter to assess how influential and interesting a relationship is. The second plot applies Fourier Amplitude Sensitivity Transformation (FAST) to provide insights into how much each input parameter is contributing and influencing the climate variable outcome predictions. Inside of this plot is an inset plot displaying a cross validation of the climate variable test vs the climate variable GPR prediction. The R^2 is provided as well to provide transparency about our emulator's accuracy. Both of these visualizations may be found as png in the `plots` folder, under their respective folder names `emulator` and `FAST_accuracy_plots`. 
@@ -188,7 +205,7 @@ This table is a life line when deciphering the CESM data abbreviations. It is im
 This data is open source and available for climate scientists to leverage for climate model calibrations and identification of key climate influencers.
 
 #### Recommended citation for the project
-Ingersoll Sofia, Childers Heather, Bhattarai Sujan. “Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard”. (2024). University of California, Santa Barbara – Bren School of Environmental Science & Management. https://github.com/GaiaFuture/CLM5_PPE_Emulator.
+Childers Heather, Ingersoll Sofia, Bhattarai Sujan. “Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard”. (2024). University of California, Santa Barbara – Bren School of Environmental Science & Management. https://github.com/GaiaFuture/CLM5_PPE_Emulator.
 
 #### Acknowledgements
 Our team would like to say a special thank you to Dr. Linnia Hawkins and Nick Cote at NCAR for their collaboration throughout this project. Additionally, we would like to thank our Client and Faculty Advisor Dr. Daniel Kennedy and our Capstone Course Director Dr. Carmen Galaz-Garcia for their dedication to our team for the total duration of this project. We could not have achieved this without your collective guidance. Thank you!
@@ -197,7 +214,7 @@ Our team would like to say a special thank you to Dr. Linnia Hawkins and Nick Co
 ![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/4b458415-219a-4261-8384-a186ca9fa146)
 
 ![image](https://github.com/GaiaFuture/CLM5_PPE_Emulator/assets/141206781/f405f2f3-755f-4ffb-976b-2555f9bee29b)
-This README.md file was generated on 2024-05-22 by SOFIA INGERSOLL
+
 
 #### References
 
