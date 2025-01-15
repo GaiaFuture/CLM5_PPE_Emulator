@@ -205,7 +205,7 @@ This table is a life line when deciphering the CESM data abbreviations. It is im
 This data is open source and available for climate scientists to leverage for climate model calibrations and identification of key climate influencers.
 
 #### Recommended citation for the project
-Childers Heather, Ingersoll Sofia, Bhattarai Sujan. “Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard”. (2024). University of California, Santa Barbara – Bren School of Environmental Science & Management. https://github.com/GaiaFuture/CLM5_PPE_Emulator.
+Heather Childers, Sofia Ingersoll, Sujan Bhattarai. “Understanding the Influence of Parameter Value Uncertainty on Climate Model Output: Developing an Interactive Dashboard”. (2024). University of California, Santa Barbara – Bren School of Environmental Science & Management. https://github.com/GaiaFuture/CLM5_PPE_Emulator.
 
 #### Acknowledgements
 Our team would like to say a special thank you to Dr. Linnia Hawkins and Nick Cote at NCAR for their collaboration throughout this project. Additionally, we would like to thank our Client and Faculty Advisor Dr. Daniel Kennedy and our Capstone Course Director Dr. Carmen Galaz-Garcia for their dedication to our team for the total duration of this project. We could not have achieved this without your collective guidance. Thank you!
